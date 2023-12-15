@@ -1,0 +1,12 @@
+{
+	"name": "Java",
+	"image": "maven:3.8-jdk-11",
+
+	"extensions": ["ms-azuretools.vscode-docker"],
+
+	"postCreateCommand": "mvn --version && mvn install:install-file -Dfile=/usr/share/maven/ref/settings-docker.xml && apt-get update && apt-get install -y git && git --version",
+
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash"
+	}
+}
